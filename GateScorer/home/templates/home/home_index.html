@@ -1,0 +1,9 @@
+{% load widget_tweaks %}
+<html>
+    <body>
+        <form action="{% url 'account:logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">logout</button>
+        </form>
+    </body>
+</html>
