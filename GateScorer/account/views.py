@@ -53,7 +53,7 @@ class loginUser(View):
     @never_cache
     def get(self,request):
         if request.user.is_authenticated==True:
-            return redirect('account:logout')
+            return redirect('home:hindex')
         else:
             form=forms.registerUserForm()
             return render(request,self.temp_name,{'form':form})
@@ -65,7 +65,7 @@ class loginUser(View):
         if user is not None:
             if user.is_active:
                 login(request,user)
-                return redirect('tutorials:stu_home')
+                return redirect('home:hindex')
         else:
             message="Please enter correct username and password"
             return render(request,self.temp_name,{'message':message,})

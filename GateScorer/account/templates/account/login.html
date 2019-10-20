@@ -24,12 +24,13 @@
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#">
+		<form action="{% url 'account:login' %}" method="POST">
+			{% csrf_token %}
 			<h1 style="margin-bottom: 25px;">Sign in</h1>
-			<input type="email" class="input" placeholder="Email"  />
-			<input type="password" class="input" placeholder="Password" />
+			<input type="text" class="input" placeholder="username" name="username"  />
+			<input type="password" class="input" placeholder="password"  name="password"/>
 			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
+			<button type="submit">Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
