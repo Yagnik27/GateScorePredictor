@@ -5,7 +5,7 @@ def index(request):
     return render(request,'home/homepage.html')
 
 def home_index(request):
-    return render(request,'home/home_index.html')
+    return render(request,'home/homepage.html')
 
 def quizz_index(request):
     return render(request,'quiz/base.html')
